@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Lala Project: Tahmini Genel Giderler</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+    var chart;
+    
+    $(document).ready(function () {
+    	
+    	// Build the chart
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Tahmini Genel Giderler'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.y}TL</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Gider',
+                data: [
+                    ['Temel Sabit Gider',   1950],
+                    ['Yatırım Maliyetleri',       300],
+                    {
+                        name: 'Bilinmeyen',
+                        y: 300,
+                        sliced: true,
+                        selected: true
+                    },
+                ]
+            }]
+        });
+    });
+    
+});
+		</script>
+	</head>
+	<body>
+<script src="dist/js/highcharts.js"></script>
+<script src="dist/js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
