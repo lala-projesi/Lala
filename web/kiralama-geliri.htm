@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Lala Project: Zamanla Gider Değişimi</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Gider Değişimi'
+            },
+            xAxis: {
+                categories: ['1. Ay', '2. Ay', '3. Ay', '4. Ay', '5. Ay', '6. Ay', '7. Ay', '8. Ay', '9. Ay', '10. Ay', '11. Ay', '12. Ay','13. Ay', '14. Ay', '15. Ay', '16. Ay', '17. Ay', '18. Ay']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Kiralama Geliri TL'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -70,
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;		
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
+            series: [{
+                name: '1. Kiracı',
+                data: [1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950, 1950]
+            }, {
+                name: '2. Kiracı',
+                data: [500, 200, 0, 0, 0, 50, 100, 0, 0, 20, 20, 20]
+            }, {
+                name: '3. Kiracı',
+                data: [0, 0, 0, 0, 0, 500, 0, 0, 0, 200, 0, 0]
+            }, {
+                name: '4. Kiracı',
+                data: [0, 0, 0, 0, 0, 500, 0, 0, 0, 200, 0, 0]
+            }]
+        });
+    });
+    
+
+		</script>
+	</head>
+	<body>
+<script src="dist/js/highcharts.js"></script>
+<script src="dist/js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
