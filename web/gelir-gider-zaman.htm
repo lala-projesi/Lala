@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Lala Project: Tahmini Aylık Kasa</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Tahmini Aylık Kasa'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: [{
+                categories: ['1. Ay', '2. Ay', '3. Ay', '4. Ay', '5. Ay', '6. Ay', '7. Ay', '8. Ay', '9. Ay', '10. Ay', '11. Ay', '12. Ay', '13. Ay', '14. Ay', '15. Ay', '16. Ay', '17. Ay', '18. Ay']
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    formatter: function() {
+                        return this.value +' TL';
+                    },
+                    style: {
+                        color: '#89A54E'
+                    }
+                },
+                title: {
+                    text: 'Toplam Gelirler TL',
+                    style: {
+                        color: '#89A54E'
+                    }
+                },
+                opposite: true
+    
+            }, { // Secondary yAxis
+                gridLineWidth: 0,
+                title: {
+                    text: 'Kasa',
+                    style: {
+                        color: '#4572A7'
+                    }
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value +' TL';
+                    },
+                    style: {
+                        color: '#4572A7'
+                    }
+                }
+    
+            }, { // Tertiary yAxis
+                gridLineWidth: 0,
+                title: {
+                    text: 'Toplam Giderler TL',
+                    style: {
+                        color: '#AA4643'
+                    }
+                },
+                labels: {
+                    formatter: function() {
+                        return this.value +' TL';
+                    },
+                    style: {
+                        color: '#AA4643'
+                    }
+                },
+                opposite: true
+            }],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 120,
+                verticalAlign: 'top',
+                y: 80,
+                floating: true,
+                backgroundColor: '#FFFFFF'
+            },
+            series: [{
+                name: 'Kasa',
+                color: '#4572A7',
+                type: 'column',
+                yAxis: 1,
+                data: [50, 400, 550, 550, 750, 400, 1050, 1550, 1950, 2330, 3130, 3930, 2400, 3400, 4100, 5800, 7400, 12000],
+                tooltip: {
+                    valueSuffix: ' TL'
+                }
+    
+            }, {
+                name: 'Toplam Giderler',
+                type: 'spline',
+                color: '#AA4643',
+                yAxis: 2,
+                data: [2450, 2100, 1950, 1950, 1950, 2500, 2050, 1950, 1950, 2170, 1970, 1970, 2000, 2000, 2500, 2000, 2000, 2000],
+                marker: {
+                    enabled: false
+                },
+                dashStyle: 'shortdot',
+                tooltip: {
+                    valueSuffix: ' TL'
+                }
+    
+            }, {
+                name: 'Toplam Gelirler',
+                color: '#89A54E',
+                type: 'spline',
+                data: [2500, 2500, 2500, 2500, 2700, 2900, 3100, 3500, 3900, 4500, 5100, 5900, 4400, 5400, 6600, 7800, 9400, 14000],
+                tooltip: {
+                    valueSuffix: ' TL'
+                }
+            }]
+        });
+    });
+    
+
+		</script>
+	</head>
+	<body>
+<script src="dist/js/highcharts.js"></script>
+<script src="dist/js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
