@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Highcharts Example</title>
+		<title>Lala Project: Kullanıcı Sayısı ve Gelir Değişimi</title>
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript">
@@ -12,26 +12,25 @@ $(function () {
                 zoomType: 'xy'
             },
             title: {
-                text: 'Average Monthly Weather Data for Tokyo'
+                text: 'Kullanıcı Sayısı ve Gelir Değişimi'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: [{
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                categories: ['1. Ay', '2. Ay', '3. Ay', '4. Ay', '5. Ay', '6. Ay', '7. Ay', '8. Ay', '9. Ay', '10. Ay', '11. Ay', '12. Ay', '13. Ay', '14. Ay', '15. Ay', '16. Ay', '17. Ay', '18. Ay']
             }],
             yAxis: [{ // Primary yAxis
                 labels: {
                     formatter: function() {
-                        return this.value +'°C';
+                        return this.value +'';
                     },
                     style: {
                         color: '#89A54E'
                     }
                 },
                 title: {
-                    text: 'Temperature',
+                    text: 'Kullanıcı Sayısı',
                     style: {
                         color: '#89A54E'
                     }
@@ -41,14 +40,14 @@ $(function () {
             }, { // Secondary yAxis
                 gridLineWidth: 0,
                 title: {
-                    text: 'Rainfall',
+                    text: 'Kiralama Geliri TL',
                     style: {
                         color: '#4572A7'
                     }
                 },
                 labels: {
                     formatter: function() {
-                        return this.value +' mm';
+                        return this.value +' TL';
                     },
                     style: {
                         color: '#4572A7'
@@ -58,7 +57,7 @@ $(function () {
             }, { // Tertiary yAxis
                 gridLineWidth: 0,
                 title: {
-                    text: 'Sea-Level Pressure',
+                    text: '',
                     style: {
                         color: '#AA4643'
                     }
@@ -86,36 +85,22 @@ $(function () {
                 backgroundColor: '#FFFFFF'
             },
             series: [{
-                name: 'Rainfall',
+                name: 'Kiralama Geliri',
                 color: '#4572A7',
                 type: 'column',
                 yAxis: 1,
-                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                data: [0, 0, 0, 0, 200, 400, 600, 1000, 1400, 2000, 2600, 3400, 4400, 5400, 6600, 7800, 9400, 14000],
                 tooltip: {
-                    valueSuffix: ' mm'
+                    valueSuffix: ' TL'
                 }
     
-            }, {
-                name: 'Sea-Level Pressure',
-                type: 'spline',
-                color: '#AA4643',
-                yAxis: 2,
-                data: [1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7],
-                marker: {
-                    enabled: false
-                },
-                dashStyle: 'shortdot',
-                tooltip: {
-                    valueSuffix: ' mb'
-                }
-    
-            }, {
-                name: 'Temperature',
+            },  {
+                name: 'Kullanıcı Sayısı',
                 color: '#89A54E',
                 type: 'spline',
-                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+                data: [0, 0, 0, 0, 5, 10, 15, 25, 35, 50, 65, 85, 110, 135, 165, 195, 235, 275],
                 tooltip: {
-                    valueSuffix: ' °C'
+                    valueSuffix: ''
                 }
             }]
         });
@@ -125,8 +110,8 @@ $(function () {
 		</script>
 	</head>
 	<body>
-<script src="../../js/highcharts.js"></script>
-<script src="../../js/modules/exporting.js"></script>
+<script src="dist/js/highcharts.js"></script>
+<script src="dist/js/modules/exporting.js"></script>
 
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 
