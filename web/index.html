@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="ENG">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,27 +14,102 @@
     <link href="dist/css/navbar-static-top.css" rel="stylesheet">
 	
   </head>
-
   <body>
-
-    <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header"> 
           <a class="navbar-brand" href="#">Lala Project</a>
         </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="">Andaç</a></li>
-            <li><a href="">Erhan</a></li>
-            <li><a href="">Güneş</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#sabit-giderler.htm">Sabit Giderler</a></li>
+          <li><a href="#toplam-gider.htm">Toplam Gider</a></li>
+          <li><a href="#zaman-gider.htm">Zaman Gider</a></li>
+          <li><a href="#kullanici-gelir.htm">Kullanıcı Gelir</a></li>
+          <li><a href="#gelir-gider-zaman.htm">Tahmini Kasa</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+
+		<div id="page1">
+		  <a id="sabit-giderler.htm"></a>
+		   
+		</div>
+
+		<div id="page2">
+		  <a id="toplam-gider.htm"></a>
+		    Portfolio page content goes here.
+		</div>
+
+		<div id="page3">
+		  <a id="zaman-gider.htm"></a>
+		    Contact page content goes here.
+		</div>
+		
+		<div id="page4">
+		  <a id="kullanici-gelir.htm"></a>
+		    Contact page content goes here.
+		</div>		
+
+		<div id="page3">
+		  <a id="gelir-gider-zaman.htm"></a>
+		    Contact page content goes here.
+		</div>		
+
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+		                $(".contactLink").click(function(){
+		                    if ($("#contactForm").is(":hidden")){
+		                        $("#contactForm").slideDown("slow");
+		                    }
+		                    else{
+		                        $("#contactForm").slideUp("slow");
+		                    }
+		                });
+		            });
+		            function closeForm(){
+		                $("#messageSent").show("slow");
+		                setTimeout('$("#messageSent").hide();$("#contactForm").slideUp("slow")', 2000);
+		           }
+
+		$(document).ready(function() {
+		  function filterPath(string) {
+		    return string
+		      .replace(/^\//,'')
+		      .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+		      .replace(/\/$/,'');
+		  }
+		  $('a[href*=#]').each(function() {
+		    if ( filterPath(location.pathname) == filterPath(this.pathname)
+		    && location.hostname == this.hostname
+		    && this.hash.replace(/#/,'') ) {
+		      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+		      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+		       if ($target) {
+		         var targetOffset = $target.offset().top;
+		         $(this).click(function() {
+		           $('html, body').animate({scrollTop: targetOffset}, 1000);
+		           var d = document.createElement("div");
+		        d.style.height = "101%";
+		        d.style.overflow = "hidden";
+		        document.body.appendChild(d);
+		        window.scrollTo(0,scrollToM);
+		        setTimeout(function() {
+		        d.parentNode.removeChild(d);
+		            }, 10);
+		           return false;
+		         });
+		      }
+		    }
+		  });
+		});
+		/*! Smooth Scroll - v1.4.5 - 2012-07-22
+		* Copyright (c) 2012 Karl Swedberg; Licensed MIT, GPL */
+		</script>		
+
   </body>
+
 </html>
