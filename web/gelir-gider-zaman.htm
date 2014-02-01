@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Lala Project: Kullanıcı Sayısı ve Gelir Değişimi</title>
+		<title>Lala Project: Tahmini Aylık Kasa</title>
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript">
@@ -12,7 +12,7 @@ $(function () {
                 zoomType: 'xy'
             },
             title: {
-                text: 'Kullanıcı Sayısı ve Gelir Değişimi'
+                text: 'Tahmini Aylık Kasa'
             },
             subtitle: {
                 text: ''
@@ -23,14 +23,14 @@ $(function () {
             yAxis: [{ // Primary yAxis
                 labels: {
                     formatter: function() {
-                        return this.value +'';
+                        return this.value +' TL';
                     },
                     style: {
                         color: '#89A54E'
                     }
                 },
                 title: {
-                    text: 'Kullanıcı Sayısı',
+                    text: 'Toplam Gelirler TL',
                     style: {
                         color: '#89A54E'
                     }
@@ -40,7 +40,7 @@ $(function () {
             }, { // Secondary yAxis
                 gridLineWidth: 0,
                 title: {
-                    text: 'Kiralama Geliri TL',
+                    text: 'Kasa',
                     style: {
                         color: '#4572A7'
                     }
@@ -57,14 +57,14 @@ $(function () {
             }, { // Tertiary yAxis
                 gridLineWidth: 0,
                 title: {
-                    text: '',
+                    text: 'Toplam Giderler TL',
                     style: {
                         color: '#AA4643'
                     }
                 },
                 labels: {
                     formatter: function() {
-                        return this.value +' mb';
+                        return this.value +' TL';
                     },
                     style: {
                         color: '#AA4643'
@@ -85,22 +85,36 @@ $(function () {
                 backgroundColor: '#FFFFFF'
             },
             series: [{
-                name: 'Kiralama Geliri',
+                name: 'Kasa',
                 color: '#4572A7',
                 type: 'column',
                 yAxis: 1,
-                data: [0, 0, 0, 0, 200, 400, 600, 1000, 1400, 2000, 2600, 3400, 4400, 5400, 6600, 7800, 9400, 14000],
+                data: [50, 400, 550, 550, 750, 400, 1050, 1550, 1950, 2330, 3130, 3930, 2400, 3400, 4100, 5800, 7400, 12000],
                 tooltip: {
                     valueSuffix: ' TL'
                 }
     
-            },  {
-                name: 'Kullanıcı Sayısı',
+            }, {
+                name: 'Toplam Giderler',
+                type: 'spline',
+                color: '#AA4643',
+                yAxis: 2,
+                data: [2450, 2100, 1950, 1950, 1950, 2500, 2050, 1950, 1950, 2170, 1970, 1970, 2000, 2000, 2500, 2000, 2000, 2000],
+                marker: {
+                    enabled: false
+                },
+                dashStyle: 'shortdot',
+                tooltip: {
+                    valueSuffix: ' TL'
+                }
+    
+            }, {
+                name: 'Toplam Gelirler',
                 color: '#89A54E',
                 type: 'spline',
-                data: [0, 0, 0, 0, 5, 10, 15, 25, 35, 50, 65, 85, 110, 135, 165, 195, 235, 275],
+                data: [2500, 2500, 2500, 2500, 2700, 2900, 3100, 3500, 3900, 4500, 5100, 5900, 4400, 5400, 6600, 7800, 9400, 14000],
                 tooltip: {
-                    valueSuffix: ''
+                    valueSuffix: ' TL'
                 }
             }]
         });
